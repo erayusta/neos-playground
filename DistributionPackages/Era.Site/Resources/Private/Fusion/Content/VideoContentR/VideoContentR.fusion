@@ -1,0 +1,39 @@
+prototype(Era.Site:Content.VideoContentR) < prototype(Neos.Neos:ContentComponent) {
+    subtitle = Neos.Neos:Editable {
+        property = 'subtitle'
+    }
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    description = Neos.Neos:Editable {
+        property = 'description'
+    }
+
+    videoUri = Neos.Fusion:ResourceUri{
+        path = 'resource://Era.Site/Public/Frontend/video/tininn.mp4'
+    }
+
+
+    renderer = afx`
+            <div class="container">
+                <div class="row justify-content-md-center my-5">
+                    <div class="col-md-8">
+                        <div class="right-video">
+                            <video class="embed-responsive" autoplay loop muted>
+                                <source src={props.videoUri} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="inside left-content">
+                            <span class="top-title">{props.subtitle}</span>
+                            <span class="title">{props.title}</span>
+                            <p class="content">{props.description}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    `
+}

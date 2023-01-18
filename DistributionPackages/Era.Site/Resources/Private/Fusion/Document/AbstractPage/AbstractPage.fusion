@@ -35,7 +35,18 @@ prototype(Era.Site:Document.AbstractPage) < prototype(Neos.Neos:Page) {
 
         renderer = afx`
             <meta http-equiv="x-ua-compatible" content="ie=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
             <!-- link your own css files here -->
             <link rel="stylesheet" href={StaticResource.uri('Era.Site', 'Public/Frontend/index.css')} />
@@ -51,8 +62,12 @@ prototype(Era.Site:Document.AbstractPage) < prototype(Neos.Neos:Page) {
         @position = 'before closingBodyTag'
 
         renderer = afx`
-            <script src={StaticResource.uri('Era.Site', 'Public/Frontend/index.js')}></script>
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+            <script src={StaticResource.uri('Era.Site', 'Public/Frontend/index.js')}></script>
             <!--
             Sitegeist.Lazybones required lazysizes, we recommend to include
             lazysizes javascript from https://github.com/aFarkas/lazysizes 

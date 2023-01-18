@@ -5,20 +5,41 @@ prototype(Era.Site:Component.Footer) < prototype(Neos.Neos:ContentComponent) {
         node = ${site}
         property = 'footerInfo'
     }
-    footerItems = ${q(site).property('footerItems')}
+
+    logoUri = Neos.Fusion:ResourceUri{
+        path = 'resource://Era.Site/Public/Frontend/img/tininn-logo.png'
+    }
+
 
     renderer = afx`
-        <footer class="main-footer">
-            <div>{props.footerInfo}</div>
-            <div>&copy; {props.year}</div>
-            <ul class="main-footer__menu">
-                <Neos.Fusion:Loop items={props.footerItems} itemName="menuItem">
-                    <li class="main-footer__menu-item">
-                        <Carbon.Link:Link node={menuItem} additionalClass="main-footer__menu-link" />
-                    </li>
-                </Neos.Fusion:Loop>
-            </ul>
-        </footer>
+
+        <footer>
+        <img src={props.logoUri} />
+
+        <div class="container">
+            <div class="row justify-content-md-center my-5">
+                <div class="col-md-6">
+                    <div>
+                        <ul class="social">
+                            <li class="instagram"> <i aria-hidden="true" class="fab fa-instagram"></i></li>
+                            <li class="facebook"><i aria-hidden="true" class="fab fa-facebook"></i></li>
+                            <li class="linkedin"><i aria-hidden="true" class="fab fa-linkedin"></i></li>
+                            <li class="youtube"><i aria-hidden="true" class="fab fa-youtube"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div>
+            <span class="footer-left">{props.footerInfo}</span>
+            <span class="footer-right">&copy; {props.year} Tin Inn</span>
+        </div>
+    </footer>
+
     `
 
     @cache {

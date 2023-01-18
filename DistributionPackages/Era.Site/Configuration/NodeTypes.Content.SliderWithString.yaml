@@ -1,0 +1,53 @@
+'Era.Site:Content.SliderWithString':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  ui:
+    label: 'Image Slider'
+    icon: 'icon-image'
+    group: structure
+  constraints:
+    nodeTypes:
+      # only allow slides inside the slider
+      '*': false
+      'Era.Site:Content.SliderWithString.Slide': true
+  properties:
+      title:
+        type: string
+        defaultValue: ''
+        ui:
+          inlineEditable: true
+          inline:
+            editorOptions:
+              placeholder: 'Enter title here...'
+              autoparagraph: false 
+
+'Era.Site:Content.SliderWithString.Slide':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Slide'
+    icon: 'icon-image'
+    inspector:
+      groups:
+        image:
+          label: 'Image'
+          position: 5
+          icon: 'icon-image'
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: 'Image'
+        reloadIfChanged: true
+        inspector:
+          group: 'image'
+    titleItem:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter title here...'
+            autoparagraph: false 

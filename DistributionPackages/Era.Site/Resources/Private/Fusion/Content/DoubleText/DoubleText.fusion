@@ -1,0 +1,29 @@
+prototype(Era.Site:Content.DoubleText) < prototype(Neos.Neos:ContentComponent) {
+    first = Neos.Neos:Editable {
+        property = 'first'
+    }
+    second = Neos.Neos:Editable {
+        property = 'second'
+    }
+    renderer = afx`
+        
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-8">
+
+
+                <div class="c-top">
+                    <div class="inside-div">
+                       {props.first}
+                    </div>
+                </div>
+                <div class="c-bottom">
+                    <div class="inside-div">
+                        {props.second}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    `
+}

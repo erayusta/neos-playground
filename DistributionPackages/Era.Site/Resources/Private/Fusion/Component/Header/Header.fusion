@@ -2,28 +2,31 @@ prototype(Era.Site:Component.Header) < prototype(Neos.Fusion:Component) {
     homeLink = Neos.Neos:NodeUri {
         node = ${site}
     }
-    menuItems = Neos.Neos:MenuItems {
-        startingPoint = ${site}
-        maximumLevels = 2
+ 
+    logoUri = Neos.Fusion:ResourceUri{
+        path = 'resource://Era.Site/Public/Frontend/img/tininn-logo.png'
     }
 
-    ##
-    # If you want to use a default rendering for a menu, you can just use:
-    ##
-    # <Neos.Neos:Menu
-    #     startingPoint={site}
-    #     attributes.class="navigation"
-    #     normal.attributes.class="navigation-item"
-    #     active.attributes.class="navigation-item navigation-item--state-active"
-    #     current.attributes.class="navigation-item navigation-item--state-current"
-    #     />
-    ##
+    videoUri = Neos.Fusion:ResourceUri{
+        path = 'resource://Era.Site/Public/Frontend/video/intro.mp4'
+    }
 
     renderer = afx`
-        <header class="main-header">
-            <a class="logo" href={props.homeLink}>BRAND NAME</a>
-            <Era.Site:Component.Header.MenuItemsRenderer items={props.menuItems} />
-        </header>
+         <header>
+        <div class="video-background-holder">
+            <div class="video-background-overlay"></div>
+            <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src={props.videoUri} type="video/mp4" />
+            </video>
+            <div class="video-background-content container h-100">
+                <div class="d-flex h-100 text-center align-items-top mt-5">
+                    <div class="w-100 text-white">
+                        <a href={props.homeLink}><img class="logo" src={props.logoUri} /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+         </header>
     `
 
 	@cache {

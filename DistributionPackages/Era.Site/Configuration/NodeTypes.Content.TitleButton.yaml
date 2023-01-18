@@ -1,0 +1,28 @@
+
+'Era.Site:Content.TitleButton':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Text & Button
+    icon: file-text
+    position: 200
+    inlineEditable: true
+  properties:
+    title:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter title here...'
+            autoparagraph: false 
+    button:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter button string here...'
+            autoparagraph: false

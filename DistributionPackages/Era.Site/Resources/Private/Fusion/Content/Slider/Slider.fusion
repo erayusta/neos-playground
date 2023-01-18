@@ -1,0 +1,54 @@
+prototype(Era.Site:Content.Slider) < prototype(Neos.Neos:ContentComponent) {
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    renderer = afx`
+         <div class="overlay-bg-2 py-2">
+        <div class="container">
+            <div class="row justify-content-md-center my-5">
+                <div class="col-md-8">
+                    <div class="slider-title mb-5">
+                        {props.title}
+                    </div>
+                    <div class="swiper2 swiper">
+
+                        <!-- wrapper for slide -->
+                        <div class="swiper-wrapper">
+
+                            <!-- single slide -->
+                            <div class="swiper-slide">
+                                <figure class="swiper-slide-inner">
+                                    <img decoding="async" class="swiper-slide-image img-fluid" src="https://tin.geopard-stuttgart.de/wp-content/uploads/2022/10/thom-bradley-7FE2UTxR1Yw-unsplash-1-320x410.jpg" />
+                                    <figcaption>Stoffe</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <figure class="swiper-slide-inner">
+                                    <img decoding="async" class="swiper-slide-image img-fluid" src="https://tin.geopard-stuttgart.de/wp-content/uploads/2022/10/nordwood-themes-6V-vJpPzvh8-unsplash-320x410.jpg" />
+                                    <figcaption>Schuhe</figcaption>
+                                </figure>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <figure class="swiper-slide-inner">
+                                    <img decoding="async" class="swiper-slide-image img-fluid" src="https://tin.geopard-stuttgart.de/wp-content/uploads/2022/10/roasted-coffee-beans-in-bag-2022-04-15-11-18-50-utc-320x410.jpg" />
+                                    <figcaption>Kaffeebohnen</figcaption>
+                                </figure>
+                            </div>
+
+
+                        </div>
+
+                        <!-- pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    `
+}

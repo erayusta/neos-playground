@@ -1,0 +1,45 @@
+prototype(Era.Site:Content.TextComponentWithVideo) < prototype(Neos.Neos:ContentComponent) {
+    subtitle = Neos.Neos:Editable {
+        property = 'subtitle'
+    }
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    more = Neos.Neos:Editable {
+        property = 'more'
+    }
+
+    description = Neos.Neos:Editable {
+        property = 'description'
+    }
+
+    videoUri = Neos.Fusion:ResourceUri{
+        path = 'resource://Era.Site/Public/Frontend/video/intro.mp4'
+    }
+
+
+    renderer = afx`
+        
+        <div class="container">
+         <div class="row justify-content-md-center my-5">
+            <div class="col-md-8">
+                <video class="embed-responsive" autoplay loop muted>
+                    <source src={props.videoUri} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div class="inside">
+                    <span class="top-title">{props.subtitle}</span>
+                    <span class="title">{props.title}</span>
+                    <p class="content">
+                    {props.description}
+                    </p>
+                    <p class="read-more">{props.more}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    `
+}

@@ -1,0 +1,16 @@
+
+'Era.Site:Content.DoubleText':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Double Text
+    icon: file-text
+    position: 200
+    inlineEditable: true
+  properties:
+    first:
+      options:
+        preset: 'text.richtext'
+    second:
+      options:
+        preset: 'text.richtext'

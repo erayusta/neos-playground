@@ -23,6 +23,39 @@ Neos:
                       a: true
                       sub: true
                       sup: true
+            'richtext':
+              type: 'string'
+              ui:
+                inlineEditable: true
+                inline:
+                  editorOptions:
+                    autoparagraph: true
+                    formatting:
+                      strong: true
+                      em: true
+                      u: true
+                      sub: true
+                      sup: true
+                      del: true
+                      p: true
+                      h1: true
+                      h2: true
+                      h3: true
+                      h4: true
+                      h5: true
+                      h6: true
+                      pre: true
+                      underline: true
+                      strikethrough: true
+                      removeFormat: true
+                      left: true
+                      right: true
+                      center: true
+                      justify: true
+                      table: true
+                      ol: true
+                      ul: true
+                      a: true 
             'plain':
               type: string
               defaultValue: ''

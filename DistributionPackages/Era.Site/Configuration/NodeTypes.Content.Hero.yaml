@@ -1,0 +1,21 @@
+'Era.Site:Content.Hero':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Hero Video'
+    icon: icon-video
+    position: 200
+    inspector:
+      groups:
+        settings:
+          label: 'Settings'
+  properties:
+    link:
+      type: string
+      ui:
+        label: Link
+        inspector:
+          group: settings
+          editor: Neos.Neos/Inspector/Editors/LinkEditor
+
+          

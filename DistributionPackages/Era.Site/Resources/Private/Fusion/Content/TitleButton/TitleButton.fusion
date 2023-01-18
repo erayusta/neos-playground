@@ -1,0 +1,25 @@
+prototype(Era.Site:Content.TitleButton) < prototype(Neos.Neos:ContentComponent) {
+
+    title = Neos.Neos:Editable {
+        property = 'title'
+    }
+
+    button = Neos.Neos:Editable {
+        property = 'button'
+    }
+
+    renderer = afx`
+        
+        <div class="container">
+        <div class="row justify-content-md-center my-5">
+            <div class="col-md-8">
+                <div class="inside">
+                    <span class="title title-with-button">{props.title}</span>
+                    <span class="button-span"><button>{props.button}</button></span>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    `
+}

@@ -1,0 +1,16 @@
+/**
+ * This Basic example shows how you can render a image tag
+ * on your own. For production we recommend to use LazyBones,
+ * as shown in Era.Site:Content.Image.
+ *
+ * This fusion prototype is currently not used and just an example.
+ */
+prototype(Era.Site:Content.Hero) < prototype(Neos.Neos:ContentComponent) {
+    link = ${q(node).property('link')}
+    
+    renderer = afx`
+       <div class="">
+           {props.link}
+        </div>
+    `
+}

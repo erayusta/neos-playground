@@ -1,0 +1,50 @@
+
+'Era.Site:Content.TextComponentWithVideo':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Text With Video
+    icon: file-video
+    position: 200
+    inlineEditable: true
+  properties:
+    subtitle:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter sub title here...'
+            autoparagraph: false
+    title:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter title here...'
+            autoparagraph: false
+    description:
+      type: string
+      ui:
+        label: Description
+        inspector:
+          group: document
+          editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+          editorOptions:
+            rows: 7
+        inline:
+          editorOptions:
+            placeholder: 'Enter description here...'
+            autoparagraph: false    
+    more:
+      type: string
+      defaultValue: ''
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Enter button string here...'
+            autoparagraph: false
